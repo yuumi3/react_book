@@ -20,3 +20,5 @@
 
 * [書籍内リンク](sources/links.md)
 * [出版元・秀和システムのページ](http://www.shuwasystem.co.jp/products/7980html/5075.html)
+* [Amazon(作りながら学ぶ React 入門)](https://www.amazon.co.jp/dp/479805075X)
+* [著者ブログ(yuumi3のお仕事日記)](http://yuumi3.hatenablog.com/entry/2017/09/15/223623)
