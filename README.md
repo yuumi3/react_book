@@ -14,6 +14,12 @@
 * [コンポーネントの応用](sources/application.md)
 * [テスティング](sources/test.md)
 
+## 質問
+
+
+質問などがありましたら、気軽に [Issues](https://github.com/yuumi3/react_book/issues) に書いて下さい
+
+
 ## 正誤表
 
 ## リンク
