@@ -10,7 +10,8 @@ mkdir jyanken
 cd jyanken
 mkdir src public
 cp ../hello_react/{.b*,.e*,pa*,w*} .
-cp ../hello_react/public/index.html public $ npm install
+cp ../hello_react/public/index.html public
+npm install
 ```
 
 ※ プロンプトは省略しました
