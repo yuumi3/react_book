@@ -7,6 +7,8 @@
 * [インストール手順 Mac](docs/install_mac.md)
 * [インストール手順 Windows](docs/install_win.md)
 
+**お知らせ**： React v16.0 (2017-10-02日の最新npm)でコードが動作することを確認しました。
+
 ## コード
 
 * [JSXの基本](sources/jsx.md)
