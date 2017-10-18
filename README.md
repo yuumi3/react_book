@@ -7,14 +7,19 @@
 * [インストール手順 Mac](docs/install_mac.md)
 * [インストール手順 Windows](docs/install_win.md)
 
-**お知らせ**： React v16.0 (2017-10-02日の最新npm)でコードが動作することを確認しました。
-
 ## コード
 
 * [JSXの基本](sources/jsx.md)
 * [コンポーネント](sources/component.md)
 * [コンポーネントの応用](sources/application.md)
 * [テスティング](sources/test.md)
+
+## お知らせ
+
+* Mocha 4.0.0 でワーニングが発生する問題に対応しました [package.jsonを変更して下さい](https://github.com/yuumi3/react_book/commit/de08b474d6b36f4b5ea0efb5c51d7371fe6ea004#diff-78e5c674b259d266893065c89276971e)
+* E2Eテストが終了しない問題があります、ただしテスト自身は正常に動作します。 [対応中](https://github.com/yuumi3/react_book/issues/4)
+*  React v16.0 (2017-10-02日の最新npm)でコードが動作することを確認しました。
+
 
 ## 質問
 
