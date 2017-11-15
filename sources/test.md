@@ -26,7 +26,7 @@ mkdir test
   "scripts": {
     "start": "webpack-dev-server --history-api-fallback",
     "webpack": "webpack -d",
-    "test": "mocha --require babel-register --timeout 5000"
+    "test": "mocha --require babel-register --exit --timeout 5000"
   },
 ```
 
