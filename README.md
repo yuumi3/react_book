@@ -16,7 +16,8 @@
 
 ## お知らせ
 
-* E2Eテストが終了しない問題が解決しました  [package.jsonを変更して下さい](https://github.com/yuumi3/react_book/commit/9a8a52eeaadf2fb0638994d086f4e88c6ed4c769)
+* @mktakuya さんの発見された間違いを正誤表に追加しました、React 16.2.0 (2018-01-09日の最新npm)でコードが動作することを確認しました。
+* E2Eテストが終了しない問題が解決しました  [package.jsonを変更して下さい](https://github.com/yuumi3/react_book/commit/9a8a52eeaadf2fb0638994d086f4e88c6ed4c769)
 * React 16.1.1 (2017-11-15日の最新npm)でコードが動作することを確認しました。
 * Mocha 4.0.0 でワーニングが発生する問題に対応しました [package.jsonを変更して下さい](https://github.com/yuumi3/react_book/commit/de08b474d6b36f4b5ea0efb5c51d7371fe6ea004#diff-78e5c674b259d266893065c89276971e)
 
