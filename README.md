@@ -33,6 +33,7 @@
 | ----- |-------------|------------|
 | 115 | scoreというパラメーターが渡って来ます。| human, computer, judgmentというパラメーターが渡って来ます。 |
 | 103 | `<img src=""logo.png"" ... />` | `<img src="logo.png" ... />`   (3か所あります) |
+| 200 | `import from './helper'` | `import { touchTap } from './helper'` |
 
 
 ## リンク
