@@ -50,7 +50,7 @@ npm init -y
 
 ```dos
 npm install react react-dom
-npm install webpack webpack-dev-server --save-dev
+npm install webpack webpack-cli webpack-dev-server --save-dev
 npm install babel-cli babel-loader babel-preset-env babel-preset-react --save-dev
 npm install eslint eslint-loader eslint-plugin-react --save-dev
 npm install css-loader style-loader babel-loader --save-dev
@@ -122,7 +122,8 @@ module.exports = {
     port: 8080,
     publicPath: '/js/'
   },
-  devtool: "#inline-source-map",
+  devtool: "eval-source-map",
+  mode: 'development',
   module: {
     rules: [{
       test: /\.js$/,
