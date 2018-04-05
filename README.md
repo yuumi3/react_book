@@ -16,6 +16,7 @@
 
 ## お知らせ
 
+* React 16.3.1 (2018-04-05日の最新のnode.js, npm)でコードが動作することを確認しました。
 * @tetsuroshimura さんの指摘により webpack4 でのエラー、警告に対応しました。インストール手順と webpack.config.js が変更されました。
 * @mktakuya さんの発見された間違いを正誤表に追加しました、React 16.2.0 (2018-01-09日の最新npm)でコードが動作することを確認しました。
 * E2Eテストが終了しない問題が解決しました  [package.jsonを変更して下さい](https://github.com/yuumi3/react_book/commit/9a8a52eeaadf2fb0638994d086f4e88c6ed4c769)
