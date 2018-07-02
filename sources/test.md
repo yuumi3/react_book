@@ -316,7 +316,6 @@ export const touchTap = (selector) => {
 ~~~js
 import Nightmare from 'nightmare'
 import assert  from 'assert'
-import { touchTap } from './helper'
 
 
 describe('じゃんけんアプリ', () => {
