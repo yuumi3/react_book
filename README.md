@@ -31,14 +31,14 @@
 質問などがありましたら、気軽に [Issues](https://github.com/yuumi3/react_book/issues) に書いて下さい
 
 
-## 正誤表
+## 表正誤
 
 | ページ | 誤            | 正            |
 | ----- |-------------|------------|
 | 30  | `npm install css-loader style-loader babel-loader --save-dev` | `npm install css-loader style-loader --save-dev` |
 | 115 | scoreというパラメーターが渡って来ます。| human, computer, judgmentというパラメーターが渡って来ます。 |
 | 103 | `<img src=""logo.png"" ... />` | `<img src="logo.png" ... />`   (3か所あります) |
-| 200 | `import from './helper'` | `import { touchTap } from './helper'` |
+| 200 | test/index.js | このサポートページの test/index.js に置き換えて下さい |
 
 
 ## リンク
