@@ -1,6 +1,6 @@
 # インストール手順 Mac編
 
-対象OS: macOS 10.12 Sierra
+対象OS: macOS 10.12以降
 
 ## 2-4 Node.js のインストール
 
