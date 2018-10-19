@@ -8,7 +8,7 @@ JSXの基本、コンポーネントで作った jyanken を改造
 
 ```shell
 npm install mocha --save-dev
-npm install babel-register --save-dev
+npm install @babel/register --save-dev
 mkdir test
 ```
 
