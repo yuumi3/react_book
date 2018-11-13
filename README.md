@@ -16,6 +16,7 @@
 
 ## お知らせ
 
+* インストール手順ページのタイプミスを修正しました。@tomoyakuroda さんありがとうございます。
 * [テストのインストール手順](https://github.com/yuumi3/react_book/blob/master/sources/test.md) が間違っていたので修正しました。 @akito-38 さん指摘ありがとうございます。
 * Bebel7.0.0 (2018-09-10日の最新のreact, node.js, npm)でコードが動作することを確認しました。
 * React 16.4.1 (2018-06-25日の最新のnode.js, npm)でコードが動作することを確認しました。
