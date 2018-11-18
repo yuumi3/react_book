@@ -52,7 +52,7 @@ npm init -y
 npm install react react-dom
 npm install webpack webpack-cli webpack-dev-server --save-dev
 npm install @babel/core @babel/preset-env @babel/preset-react --save-dev
-npm install eslint eslint-loader eslint-plugin-react --save-dev
+npm install eslint babel-eslint eslint-loader eslint-plugin-react --save-dev
 npm install css-loader style-loader babel-loader --save-dev
 ```
 
@@ -88,6 +88,7 @@ mkdir public
 
 ```json
 {
+ "parser": "babel-eslint",
   "env": {
     "browser": true,
     "es6": true
