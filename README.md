@@ -16,6 +16,7 @@
 
 ## お知らせ
 
+* 最新の環境(2018-11-18日の最新のnode.js, npm)でESLintがエラーになる件で [テストのインストール手順](https://github.com/yuumi3/react_book/blob/master/sources/test.md)を変更しました。@tomita-yoshihiko さんありがとうございます。
 * インストール手順ページのタイプミスを修正しました。@tomoyakuroda さんありがとうございます。
 * [テストのインストール手順](https://github.com/yuumi3/react_book/blob/master/sources/test.md) が間違っていたので修正しました。 @akito-38 さん指摘ありがとうございます。
 * Bebel7.0.0 (2018-09-10日の最新のreact, node.js, npm)でコードが動作することを確認しました。
