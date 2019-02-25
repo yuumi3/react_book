@@ -1,6 +1,6 @@
 # 「作りながら学ぶ React 入門」 サポートページ
 
-![](http://www.shuwasystem.co.jp/products/7980img/5075/a.jpg)
+![](https://www.ey-office.com/images/reactBook.png)
 
 ## 開発環境の構築
 
@@ -16,6 +16,7 @@
 
 ## お知らせ
 
+* React 16.8.3 (2019-02-22日の最新のnode.js, npm)でコードが動作することを確認しました。
 * 最新の環境(2018-11-18日の最新のnode.js, npm)でESLintがエラーになる件で [テストのインストール手順](https://github.com/yuumi3/react_book/blob/master/sources/test.md)を変更しました。@tomita-yoshihiko さんありがとうございます。
 * インストール手順ページのタイプミスを修正しました。@tomoyakuroda さんありがとうございます。
 * [テストのインストール手順](https://github.com/yuumi3/react_book/blob/master/sources/test.md) が間違っていたので修正しました。 @akito-38 さん指摘ありがとうございます。
