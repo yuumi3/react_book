@@ -44,6 +44,7 @@
 | 115 | scoreというパラメーターが渡って来ます。| human, computer, judgmentというパラメーターが渡って来ます。 |
 | 103 | `<img src=""logo.png"" ... />` | `<img src="logo.png" ... />`   (3か所あります) |
 | 200 | test/index.js | このサポートページの test/index.js に置き換えて下さい |
+| 120 | サンプルコードを含め本書のいたるところで **JyankeGamePage** と書かれています |本来は **JyankenGamePage** が正しいのですのですがJyankeGamePageと読み替えて下さい |
 
 
 ## リンク
