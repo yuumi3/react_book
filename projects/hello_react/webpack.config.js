@@ -11,7 +11,8 @@ module.exports = {
     port: 8080,
     publicPath: '/js/'
   },
-  devtool: "#inline-source-map",
+  devtool: "eval-source-map",
+  mode: 'development',
   module: {
     rules: [{
       test: /\.js$/,
