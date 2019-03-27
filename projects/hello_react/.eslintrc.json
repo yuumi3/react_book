@@ -15,5 +15,10 @@
     "plugins": ["react"],
     "rules": {
       "no-console": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
     }
   }

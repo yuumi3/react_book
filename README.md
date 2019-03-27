@@ -15,7 +15,8 @@
 * [テスティング](sources/test.md)
 
 ## お知らせ
-
+* React 16.8.5 (2019-03-27日の最新のnode.js, npm)でコードが動作することを確認しました。
+* `npx eslint`, `npx babel`が動作しない問題に対応しました @skytomo221 さん報告ありがとうざいます。
 * React 16.8.3 (2019-02-22日の最新のnode.js, npm)でコードが動作することを確認しました。
 * 最新の環境(2018-11-18日の最新のnode.js, npm)でESLintがエラーになる件で [テストのインストール手順](https://github.com/yuumi3/react_book/blob/master/sources/test.md)を変更しました。@tomita-yoshihiko さんありがとうございます。
 * インストール手順ページのタイプミスを修正しました。@tomoyakuroda さんありがとうございます。
