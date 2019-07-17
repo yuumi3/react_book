@@ -12,24 +12,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
-    "css-loader": "^2.1.1",
-    "eslint": "^5.15.3",
-    "eslint-loader": "^2.1.2",
-    "eslint-plugin-react": "^7.12.4",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "eslint": "^6.0.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-react": "^7.14.2",
     "style-loader": "^0.23.1",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   }
 }
