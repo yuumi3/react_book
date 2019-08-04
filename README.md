@@ -49,9 +49,15 @@
 | 120 | サンプルコードを含め本書のいたるところで **JyankeGamePage** と書かれています |本来は **JyankenGamePage** が正しいのですのですがJyankeGamePageと読み替えて下さい |
 
 
+## 新機能・機能変更
+
+Reactに新規に追加された機能や大きく変わった部分に付いてもメモです
+
+* [Hooks](updates/hooks.md)
+
 ## リンク
 
 * [書籍内リンク](sources/links.md)
 * [出版元・秀和システムのページ](http://www.shuwasystem.co.jp/products/7980html/5075.html)
 * [Amazon(作りながら学ぶ React 入門)](https://www.amazon.co.jp/dp/479805075X)
-* [著者ブログ(yuumi3のお仕事日記)](http://yuumi3.hatenablog.com/entry/2017/09/15/223623)
+* [著者ブログ(EY Office)](https://www.ey-office.com/category/React/)
