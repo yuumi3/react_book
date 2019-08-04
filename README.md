@@ -1,6 +1,6 @@
 # 「作りながら学ぶ React 入門」 サポートページ
 
-![](https://www.ey-office.com/images/reactBook.png)
+![](./images/ReactBook.png)
 
 ## 開発環境の構築
 
@@ -15,6 +15,7 @@
 * [テスティング](sources/test.md)
 
 ## お知らせ
+* React 16以降で追加された機能・変更された機能に付いて **新機能・機能変更** に書いて行きます
 * React 16.8.6 (2019-07-17日の最新のnode.js, npm)でコードが動作することを確認しました。
 * React 16.8.5 (2019-03-27日の最新のnode.js, npm)でコードが動作することを確認しました。
 * `npx eslint`, `npx babel`が動作しない問題に対応しました @skytomo221 さん報告ありがとうざいます。
@@ -53,7 +54,8 @@
 
 Reactに新規に追加された機能や大きく変わった部分に付いてもメモです
 
-* [Hooks](updates/hooks.md)
+* [Hooks (useState, useEffect)](updates/hooks1.md)
+* [ライフサイクルメソッドの変更](updates/lifecycle.md)
 
 ## リンク
 

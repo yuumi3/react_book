@@ -1,4 +1,4 @@
-# Hooks
+# Hooks (useState, useEffect)
 
 Hooks  (フック) は React 16.8 で追加された新機能です。state などの React の機能を、クラスを書かずに使えるようになります。  [公式ドキュメント](https://ja.reactjs.org/docs/hooks-intro.html)
 
