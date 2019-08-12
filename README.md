@@ -56,6 +56,7 @@ Reactに新規に追加された機能や大きく変わった部分に付いて
 
 * [Hooks (useState, useEffect)](updates/hooks1.md)
 * [ライフサイクルメソッドの変更](updates/lifecycle.md)
+* [Redux](updates/redux.md)
 
 ## リンク
 
