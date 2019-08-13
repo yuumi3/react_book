@@ -448,21 +448,21 @@ class MoneyBook extends Component {
     )
   }
 }
-
 class MoneyEntry extends Component {
   constructor(props) {
     super(props)
-    this.date   = null
-    this.item   = null
-    this.amount = null
-    this.payingIn = null
+    this.date   = React.createRef()
+    this.item   = React.createRef()
+    this.amount = React.createRef()
+    this.payingIn = React.createRef()
   }
   onClickSubmit() {
-    this.props.add(this.date.value, this.item.value, this.amount.value * (this.payingIn.checked ? 1 : -1))
-    this.date.value   = ""
-    this.item.value   = ""
-    this.amount.value = ""
-    this.payingIn.checked = true
+    console.log(this.payingIn.checked)
+    this.props.add(this.date.current.value, this.item.current.value, this.amount.current.value * (this.payingIn.current.checked ? 1 : -1))
+    this.date.current.value   = ""
+    this.item.current.value   = ""
+    this.amount.current.value = ""
+    this.payingIn.current.checked = true
   }
   render() {
     return (
@@ -470,12 +470,12 @@ class MoneyEntry extends Component {
         <fieldset>
           <legend>記帳</legend>
           <div>
-            <input type="radio" defaultChecked name="payingInOut" ref={(node) => this.payingIn = node} /> 入金
+            <input type="radio" defaultChecked name="payingInOut" ref={this.payingIn} /> 入金
             <input type="radio" name="payingInOut" /> 出金
           </div>
-          <div>日付: <input type="text" defaultValue="" ref={(node) => this.date = node} placeholder="3/15" /> </div>
-          <div>項目: <input type="text" defaultValue="" ref={(node) => this.item = node} placeholder="おこづかい" /> </div>
-          <div>金額: <input type="text" defaultValue="" ref={(node) => this.amount = node} placeholder="1000" /> </div>
+          <div>日付: <input type="text" defaultValue="" ref={this.date} placeholder="3/15" /> </div>
+          <div>項目: <input type="text" defaultValue="" ref={this.item} placeholder="おこづかい" /> </div>
+          <div>金額: <input type="text" defaultValue="" ref={this.amount} placeholder="1000" /> </div>
           <div> <input type="submit" value="追加" onClick={() => this.onClickSubmit()} /> </div>
         </fieldset>
       </div>
@@ -512,7 +512,7 @@ const MoneyBookItem = (props) => {
       <td>{date}</td>
       <td>{item}</td>
       <td>{amount >= 0 ? amount : null}</td>
-      <td>{amount < 0  ? -amount : null}</td>
+      <td>{amount < 0 ? -amount : null}</td>
     </tr>
   )
 }
@@ -526,6 +526,7 @@ const Title = (props) => {
 Title.propTypes = {
   children: PropTypes.string
 }
+
 
 ReactDOM.render(
   <MoneyBook />,
