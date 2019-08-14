@@ -10,7 +10,8 @@ mkdir money_book
 cd money_book
 mkdir src public
 cp ../hello_react/{.b*,.e*,pa*,w*} .
-cp ../hello_react/public/index.html public npm install
+cp ../hello_react/public/index.html public
+npm install
 ```
 
 ※ プロンプトは省略しました
