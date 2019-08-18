@@ -15,11 +15,13 @@ import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { BrowserRouter, Route,  Redirect, Link } from 'react-router-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import FlatButton from 'material-ui/FlatButton'
-import RaisedButton from 'material-ui/RaisedButton'
-import Paper from 'material-ui/Paper';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import Button from '@material-ui/core/Button'
+import Paper from '@material-ui/core/Paper'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
 import Jyanken from './Jyanken'
 
 const JyankenModel = new Jyanken()
@@ -36,25 +38,23 @@ const JyankeGamePage = (props) => {
     JyankenModel.pon(te)
     getResult()
   }
-  const tabStyle = {width: 200, height: 50, textAlign: 'center', color: '#fff', backgroundColor: '#01bcd4'}
+  const tabStyle = {width: 200, height: 50, textAlign: 'center', color: '#fff', backgroundColor: '#01bcd4', borderRadius: 0}
   const activeStyle = (path) => Object.assign({borderBottom: `solid 2px ${props.location.pathname.match(path) ? '#f00' : '#01bcd4'}`}, tabStyle)
 
   useEffect(() => { getResult() }, [])
 
   return (
-    <MuiThemeProvider>
-      <div style={{marginLeft: 30}}>
-        <Header>じゃんけん ポン！</Header>
-        <JyankenBox actionPon={(te) => pon(te)} />
-        <Paper style={{width: 400}} zDepth={2}>
-          <Link id="tab-scores" to="/scores"><FlatButton label="対戦結果" style={activeStyle('scores')}/></Link>
-          <Link id="tab-status" to="/status"><FlatButton label="対戦成績" style={activeStyle('status')}/></Link>
-          <Route path="/scores" render={() => <ScoreList scores={scores} />}/>
-          <Route path="/status" render={() => <StatusBox status={status} />}/>
-          <Route exat path="/" render={() => <Redirect to="/scores" />}/>
-        </Paper>
-      </div>
-    </MuiThemeProvider>
+    <div style={{marginLeft: 30}}>
+      <Header>じゃんけん ポン！</Header>
+      <JyankenBox actionPon={(te) => pon(te)} />
+      <Paper style={{width: 400}} zDepth={2}>
+        <Link id="tab-scores" to="/scores" style={{textDecoration: 'none'}}><Button style={activeStyle('scores')}>対戦結果</Button></Link>
+        <Link id="tab-status" to="/status" style={{textDecoration: 'none'}}><Button style={activeStyle('status')}>対戦成績</Button></Link>
+        <Route path="/scores" component={() => <ScoreList scores={scores} />}/>
+        <Route path="/status" component={() => <StatusBox status={status} />}/>
+        <Route exact path="/" component={() => <Redirect to="/scores" />}/>
+      </Paper>
+    </div>
   )
 }
 JyankeGamePage.propTypes = {
@@ -93,32 +93,38 @@ JyankeGamePage.propTypes = {
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card'
-import { List, ListItem } from 'material-ui/List'
-import DropDownMenu from 'material-ui/DropDownMenu'
-import MenuItem from 'material-ui/MenuItem'
-import RefreshIndicator from 'material-ui/RefreshIndicator'
-import WeatherIcon from 'material-ui/svg-icons/image/wb-sunny'
-import TemperatureIcon from 'material-ui/svg-icons/editor/show-chart'
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
+import InputLabel from '@material-ui/core/InputLabel'
+import MenuItem from '@material-ui/core/MenuItem'
+import FormControl from '@material-ui/core/FormControl'
+import Select from '@material-ui/core/Select'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import WeatherIcon from '@material-ui/icons/WbSunny'
+import TemperatureIcon from '@material-ui/icons/ShowChart'
 
 const Places = [{name: '札幌', id: 2128295}, {name: '東京', id: 1850147},
                 {name: '大阪', id: 1853909}, {name: '沖縄', id: 1894616}]
-const OpenWeatherMapKey = "** ここに取得したAPIキーを書いて下さい **"
+const OpenWeatherMapKey = "＊＊ ここに取得したAPIキーを書いて下さい ＊＊"
 
 const WeatherPage = () => {
-  const [placeName, setPlaceName] = useState(null)
+  const [placeIndex, setPlaceIndex] = useState(null)
   const [weather, setWeather] = useState(null)
-  const [loading, setLoading] = useState(false)
   const [temperature, setTemperature] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   const selectPlace = (index) => {
-    if (index > 0) {
-      const place = Places[index - 1]
-      setPlaceName(place.name)
-      setLoading(true)
-      getWeather(place.id)
-    }
+    setPlaceIndex(index)
+    setWeather(null)
+    setTemperature(null)
+    setLoading(true)
+    getWeather(Places[index].id)
   }
 
   const getWeather = async(id) => {
@@ -138,19 +144,18 @@ const WeatherPage = () => {
     }
   }
 
+  const placeName = placeIndex === null ? "" : Places[placeIndex].name
   return (
-    <MuiThemeProvider>
-      <Card style={{margin: 30}}>
-        <CardHeader title={<Title place={placeName} />} />
-        <CardText style={{position: 'relative'}}>
-          <RefreshIndicator status={loading ? 'loading' : 'hide'} top={40} left={100} loadingColor="#f00" />
-          <WeaterInfomation weather={weather} temperature={temperature} />
-        </CardText>
-        <CardActions>
-          <PlaceSelector places={Places} actionSelect={(ix) => selectPlace(ix)} />
-        </CardActions>
-      </Card>
-    </MuiThemeProvider>
+    <Card style={{margin: 30}}>
+      <CardHeader title={<Title placeName={placeName} />} />
+      <CardContent style={{position: 'relative'}}>
+        {loading ? <CircularProgress style={{position: "absolute", top:40, left: 100}} /> : null}
+        <WeaterInfomation weather={weather} temperature={temperature} />
+      </CardContent>
+      <CardActions>
+        <PlaceSelector places={Places} placeIndex={placeIndex} actionSelect={(ix) => selectPlace(ix)} />
+      </CardActions>
+    </Card>
   )
 }
 

@@ -26,34 +26,34 @@ import { Switch, Route,  Redirect, Link } from 'react-router-dom'
 import { connectRouter, routerMiddleware, ConnectedRouter } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import FlatButton from 'material-ui/FlatButton'
-import RaisedButton from 'material-ui/RaisedButton'
-import Paper from 'material-ui/Paper';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
+import Button from '@material-ui/core/Button'
+import Paper from '@material-ui/core/Paper'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableHead from '@material-ui/core/TableHead'
+import TableRow from '@material-ui/core/TableRow'
 
 
 // --- Components
 
 const Jyanken = (props) => {
-    const tabStyle = {width: 200, height: 50, textAlign: 'center', color: '#fff', backgroundColor: '#01bcd4'}
-    const activeStyle = (path) => Object.assign({borderBottom: `solid 2px ${props.pathname.match(path) ? '#f00' : '#01bcd4'}`}, tabStyle)
-    return (
-    <MuiThemeProvider>
-      <div style={{marginLeft: 30}}>
-        <Header>じゃんけん ポン！</Header>
-        <JyankenBox actionPon={(te) => props.onClick(te)} />
-        <Paper style={{width: 400}} zDepth={2}>
-          <Link id="tab-scores" to="/scores"><FlatButton label="対戦結果" style={activeStyle('scores')}/></Link>
-          <Link id="tab-status" to="/status"><FlatButton label="対戦成績" style={activeStyle('status')}/></Link>
-          <Switch>
-            <Route path="/scores" render={() => <ScoreList scores={props.scores} />}/>
-            <Route path="/status" render={() => <StatusBox status={props.status} />}/>
-            <Route exat path="/" render={() => <Redirect to="/scores" />}/>
-          </Switch>
-        </Paper>
-      </div>
-    </MuiThemeProvider>
+  const tabStyle = {width: 200, height: 50, textAlign: 'center', color: '#fff', backgroundColor: '#01bcd4', borderRadius: 0}
+  const activeStyle = (path) => Object.assign({borderBottom: `solid 2px ${props.pathname.match(path) ? '#f00' : '#01bcd4'}`}, tabStyle)
+  return (
+    <div style={{marginLeft: 30}}>
+      <Header>じゃんけん ポン！</Header>
+      <JyankenBox actionPon={(te) => props.onClick(te)} />
+      <Paper style={{width: 400}} zDepth={2}>
+        <Link id="tab-scores" to="/scores" style={{textDecoration: 'none'}}><Button style={activeStyle('scores')}>対戦結果</Button></Link>
+        <Link id="tab-status" to="/status" style={{textDecoration: 'none'}}><Button style={activeStyle('status')}>対戦成績</Button></Link>
+        <Switch>
+          <Route path="/scores" render={() => <ScoreList scores={props.scores} />}/>
+          <Route path="/status" render={() => <StatusBox status={props.status} />}/>
+          <Route exat path="/" render={() => <Redirect to="/scores" />}/>
+        </Switch>
+      </Paper>
+    </div>
   )
 }
 Jyanken.propTypes = {
@@ -70,15 +70,15 @@ Header.propTypes = {
 
 const StatusBox = (props) => (
   <Table>
-    <TableBody displayRowCheckbox={false}>
-      <TableRow displayBorder={false}>
-        <TableHeaderColumn>勝ち</TableHeaderColumn><TableRowColumn style={judgmentStyle(1)}>{props.status.win}</TableRowColumn>
+    <TableBody>
+      <TableRow>
+        <TableCell variant="head">勝ち</TableCell><TableCell style={judgmentStyle(1)}>{props.status.win}</TableCell>
       </TableRow>
-      <TableRow displayBorder={false}>
-        <TableHeaderColumn>負け</TableHeaderColumn><TableRowColumn style={judgmentStyle(2)}>{props.status.lose}</TableRowColumn>
+      <TableRow>
+        <TableCell variant="head">負け</TableCell><TableCell style={judgmentStyle(2)}>{props.status.lose}</TableCell>
       </TableRow>
-      <TableRow displayBorder={false}>
-        <TableHeaderColumn>引き分け</TableHeaderColumn><TableRowColumn style={judgmentStyle(0)}>{props.status.draw}</TableRowColumn>
+      <TableRow>
+        <TableCell variant="head">引き分け</TableCell><TableCell style={judgmentStyle(0)}>{props.status.draw}</TableCell>
       </TableRow>
     </TableBody>
   </Table>
@@ -90,10 +90,10 @@ StatusBox.propTypes = {
 const JyankenBox = (props) => {
   const style = {marginLeft: 20}
   return (
-    <div style={{marginTop: 40, marginBottom: 30, marginLeft: 30}}>
-      <RaisedButton id="btn-guu"   label="グー" onClick={() => props.actionPon(0)} style={style} />
-      <RaisedButton id="btn-choki" label="チョキ" onClick={() => props.actionPon(1)} style={style} />
-      <RaisedButton id="btn-paa"  label="パー" onClick={() => props.actionPon(2)} style={style} />
+    <div style={{marginTop: 40, marginBottom: 30, marginLeft: 50}}>
+      <Button variant="contained" id="btn-guu" onClick={() => props.actionPon(0)} style={style}>グー</Button>
+      <Button variant="contained" id="btn-choki" onClick={() => props.actionPon(1)} style={style}>チョキ</Button>
+      <Button variant="contained" id="btn-paa" onClick={() => props.actionPon(2)} style={style}>パー</Button>
     </div>
   )
 }
@@ -103,11 +103,11 @@ JyankenBox.propTypes = {
 
 const ScoreList = (props) => (
   <Table>
-    <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
+    <TableHead>
       <TableRow>
-        <TableHeaderColumn>時間</TableHeaderColumn><TableHeaderColumn>人間</TableHeaderColumn><TableHeaderColumn>コンピュータ</TableHeaderColumn><TableHeaderColumn>結果</TableHeaderColumn>
+        <TableCell>時間</TableCell><TableCell>人間</TableCell><TableCell>コンピュータ</TableCell><TableCell>結果</TableCell>
       </TableRow>
-    </TableHeader>
+    </TableHead>
     <TableBody>
       {props.scores.map((score, ix) => <ScoreListItem key={ix} score={score} />)}
     </TableBody>
@@ -122,11 +122,11 @@ const ScoreListItem = (props) => {
   const judgmentString = ["引き分け","勝ち", "負け"]
   const dateHHMMSS = (d) => d.toTimeString().substr(0, 8)
   return (
-    <TableRow style={judgmentStyle(props.score.judgment)}>
-      <TableRowColumn>{dateHHMMSS(props.score.created_at)}</TableRowColumn>
-      <TableRowColumn>{teString[props.score.human]}</TableRowColumn>
-      <TableRowColumn>{teString[props.score.computer]}</TableRowColumn>
-      <TableRowColumn>{judgmentString[props.score.judgment]}</TableRowColumn>
+    <TableRow>
+      <TableCell style={judgmentStyle(props.score.judgment)}>{dateHHMMSS(props.score.created_at)}</TableCell>
+      <TableCell style={judgmentStyle(props.score.judgment)}>{teString[props.score.human]}</TableCell>
+      <TableCell style={judgmentStyle(props.score.judgment)}>{teString[props.score.computer]}</TableCell>
+      <TableCell style={judgmentStyle(props.score.judgment)}>{judgmentString[props.score.judgment]}</TableCell>
     </TableRow>
   )
 }
@@ -134,7 +134,7 @@ ScoreListItem.propTypes = {
   score: PropTypes.object
 }
 
-const judgmentStyle = (judgment) => ({color: ["#000", "#2979FF", "#FF1744"][judgment]})
+const judgmentStyle = (judgment) => ({paddingRight: "16px", color: ["#000", "#2979FF", "#FF1744"][judgment]})
 
 // --- Model
 
@@ -156,7 +156,7 @@ const jyankenPon = (human) => ({
 const scoreReducer = (state = [], action) => {
   switch (action.type) {
     case 'JYANKEN_PON': {
-      const judgment = JyankenModel.judgment(computer, human)
+      const judgment = JyankenModel.judgment(action.computer, action.human)
       return [
         {
           human: action.human,
@@ -175,7 +175,7 @@ const scoreReducer = (state = [], action) => {
 const statusReducer = (state = {draw: 0, win: 0, lose: 0}, action) => {
   switch (action.type) {
     case 'JYANKEN_PON': {
-      const judgment = JyankenModel.judgment(computer, human)
+      const judgment = JyankenModel.judgment(action.computer, action.human)
       const statusKey = ['draw', 'win', 'lose'][judgment]
       return {
         ...state,
@@ -193,7 +193,7 @@ const reducers = (history) => combineReducers({
   statusReducer
 })
 
-// --- Containers
+// --- Constants
 
 const JyankeGamePage = connect(
   (state) => ({scores: state.scoreReducer, status: state.statusReducer, pathname: state.router.location.pathname}),
@@ -202,7 +202,7 @@ const JyankeGamePage = connect(
   })
 )(Jyanken)
 
-// --- Store
+// --- Top
 
 export const history = createBrowserHistory()
 const store = createStore(
@@ -211,8 +211,6 @@ const store = createStore(
     routerMiddleware(history),
     logger)
 )
-
-// --- Top
 
 ReactDOM.render(
   <Provider store={store}>

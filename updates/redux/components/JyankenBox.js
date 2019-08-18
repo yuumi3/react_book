@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import RaisedButton from 'material-ui/RaisedButton'
+import Button from '@material-ui/core/Button'
 
 const JyankenBox = (props) => {
   const style = {marginLeft: 20}
   return (
-    <div style={{marginTop: 40, marginBottom: 30, marginLeft: 30}}>
-      <RaisedButton id="btn-guu"   label="グー" onClick={() => props.actionPon(0)} style={style} />
-      <RaisedButton id="btn-choki" label="チョキ" onClick={() => props.actionPon(1)} style={style} />
-      <RaisedButton id="btn-paa"  label="パー" onClick={() => props.actionPon(2)} style={style} />
+    <div style={{marginTop: 40, marginBottom: 30, marginLeft: 50}}>
+      <Button variant="contained" id="btn-guu" onClick={() => props.actionPon(0)} style={style}>グー</Button>
+      <Button variant="contained" id="btn-choki" onClick={() => props.actionPon(1)} style={style}>チョキ</Button>
+      <Button variant="contained" id="btn-paa" onClick={() => props.actionPon(2)} style={style}>パー</Button>
     </div>
   )
 }
