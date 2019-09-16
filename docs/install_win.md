@@ -5,7 +5,9 @@
 
 ## 2-4 Node.js のインストール
 
-https://nodejs.org/ja/  から「最新版」をダウンロードしインストール
+https://nodejs.org/ja/  から「最新版」をダウンロードしインストールします
+
+* **Tools Native Modules**画面の `Automatically install the necessary tools` チェックはONにしないで下さい (デフォルトはOFFです)
 
 インストール後コマンドプロンプトでバージョンを確認、バージョン番号はどんどん上がるので一致してなくて良いです
 
