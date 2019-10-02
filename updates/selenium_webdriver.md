@@ -2,6 +2,10 @@
 
 jyankenアプリに Selenium WebDriverを使ったE2Eテストのサンプルコードを作りました。
 
+* [Selenium WebDriver](https://www.seleniumhq.org/projects/webdriver/)
+* [Selenium WebDriverのJavaScript API](https://seleniumhq.github.io/selenium/docs/api/javascript/)
+* [ChromeDriver - WebDriver for Chrome](https://chromedriver.chromium.org/downloads)
+
 ## 環境構築
 
 #### elenium-webdriver のインストール
