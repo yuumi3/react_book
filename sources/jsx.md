@@ -23,7 +23,7 @@ mkdir money_book
 cd money_book
 mkdir src public
 xcopy ..\hello_react . /c /h
-copy ..\hello_react\public\index.html public
+xcopy ..\hello_react\public\index.html public
 npm install
 ```
 
