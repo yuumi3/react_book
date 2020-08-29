@@ -1,5 +1,8 @@
 # 「作りながら学ぶ React 入門」 サポートページ
 
+![React install](https://github.com/yuumi3/react_book/workflows/React%20install/badge.svg)
+
+
 ![](./images/ReactBook.png)
 
 ## 開発環境の構築

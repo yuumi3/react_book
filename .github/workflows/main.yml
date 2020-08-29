@@ -1,0 +1,56 @@
+name: React install
+
+on:
+  schedule:
+    - cron: '8 1 * * 1'
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  windows:
+    name: Install on Windows
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: cmd
+        working-directory: .\projects\hello_react
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Reset package.json
+        run: |
+          del /q package-lock.json package.json
+          npm init -y
+      - run: npm install react react-dom
+      - run: npm install webpack webpack-cli webpack-dev-server --save-dev
+      - run: npm install @babel/core @babel/preset-env @babel/preset-react @babel/cli --save-dev
+      - run: npm install eslint babel-eslint eslint-loader eslint-plugin-react --save-dev
+      - run: npm install css-loader style-loader babel-loader --save-dev
+      - name: Run webpack
+        run: npx webpack -d
+
+  mac:
+    name: Install on Mac
+    runs-on: macos-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./projects/hello_react
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Reset package.json
+        run: |
+          rm package-lock.json package.json
+          npm init -y
+      - run: npm install react react-dom
+      - run: npm install webpack webpack-cli webpack-dev-server --save-dev
+      - run: npm install @babel/core @babel/preset-env @babel/preset-react @babel/cli --save-dev
+      - run: npm install eslint babel-eslint eslint-loader eslint-plugin-react --save-dev
+      - run: npm install css-loader style-loader babel-loader --save-dev
+      - name: Run webpack
+        run: npx webpack -d
