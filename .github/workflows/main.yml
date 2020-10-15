@@ -29,7 +29,7 @@ jobs:
       - run: npm install eslint babel-eslint eslint-loader eslint-plugin-react --save-dev
       - run: npm install css-loader style-loader babel-loader --save-dev
       - name: Run webpack
-        run: npx webpack -d
+        run: npx webpack
 
   mac:
     name: Install on Mac
@@ -53,4 +53,4 @@ jobs:
       - run: npm install eslint babel-eslint eslint-loader eslint-plugin-react --save-dev
       - run: npm install css-loader style-loader babel-loader --save-dev
       - name: Run webpack
-        run: npx webpack -d
+        run: npx webpack

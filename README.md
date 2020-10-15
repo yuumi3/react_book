@@ -18,6 +18,7 @@
 * [テスティング](sources/test.md)
 
 ## お知らせ
+* Webpack5(webpack-cli@4)に対応しました
 * **新機能・機能変更** に「Selenium WebDriverを使ったE2Eテスト」を追加しました
 * Material-UI v4.x に対応しました (書籍の中で使っていた Material-UI v0.x が depreciated になったので)
 * React 16以降で追加された機能・変更された機能に付いて **新機能・機能変更** に書いて行きます
