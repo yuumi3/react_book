@@ -18,6 +18,7 @@
 * [テスティング](sources/test.md)
 
 ## お知らせ
+* Webpack5の変更(Error: Cannot find module 'webpack-cli/bin/config-yargs')に対応しました
 * Webpack5(webpack-cli@4)に対応しました
 * **新機能・機能変更** に「Selenium WebDriverを使ったE2Eテスト」を追加しました
 * Material-UI v4.x に対応しました (書籍の中で使っていた Material-UI v0.x が depreciated になったので)

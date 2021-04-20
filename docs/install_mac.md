@@ -1,6 +1,6 @@
 # インストール手順 Mac編
 
-対象OS: macOS 10.12以降
+対象OS: macOS 10.14以降
 
 ## 2-4 Node.js のインストール
 
@@ -51,7 +51,7 @@ npm init -y
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack serve",
     "webpack": "webpack -d"
   },
   "keywords": [],
@@ -150,7 +150,7 @@ module.exports = {
       loader: "eslint-loader"
     }, {
       test: /\.css$/,
-      loader: ["style-loader","css-loader"]
+      use: ["style-loader","css-loader"]
     }, {
       test: /\.js$/,
       exclude: /node_modules/,

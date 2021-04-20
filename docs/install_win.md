@@ -39,7 +39,7 @@ npm init -y
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack serve",
     "webpack": "webpack -d"
   },
   "keywords": [],
@@ -140,7 +140,7 @@ module.exports = {
       loader: "eslint-loader"
     }, {
       test: /\.css$/,
-      loader: ["style-loader","css-loader"]
+      use: ["style-loader","css-loader"]
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
