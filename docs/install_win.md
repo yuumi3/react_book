@@ -122,16 +122,15 @@ module.exports = {
     app: "./src/index.js"
   },
   output: {
-    path: __dirname + '/public/js',
+    path: __dirname + "/public",
+    publicPath: "/js/",
     filename: "[name].js"
   },
     devServer: {
-    contentBase: __dirname + '/public',
-    port: 8080,
-    publicPath: '/js/'
+    port: 8080
   },
   devtool: "eval-source-map",
-  mode: 'development',
+  mode: "development",
   module: {
     rules: [{
       test: /\.js$/,
@@ -144,7 +143,7 @@ module.exports = {
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
+      loader: "babel-loader"
      }]
   }
 };
