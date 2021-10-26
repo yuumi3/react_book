@@ -3,11 +3,11 @@ module.exports = {
     app: "./src/index.js"
   },
   output: {
-    path: __dirname + "/public",
+    path: __dirname + "/public/js",
     publicPath: "/js/",
-    filename: "js/[name].js"
+    filename: "[name].js"
   },
-    devServer: {
+  devServer: {
     port: 8080
   },
   devtool: "eval-source-map",
