@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: __dirname + "/public",
     publicPath: "/js/",
-    filename: "[name].js"
+    filename: "js/[name].js"
   },
     devServer: {
     port: 8080
