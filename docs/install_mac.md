@@ -66,7 +66,7 @@ npm init -y
 npm install react react-dom
 npm install webpack webpack-cli webpack-dev-server --save-dev
 npm install @babel/core @babel/preset-env @babel/preset-react @babel/cli --save-dev
-npm install eslint@7 babel-eslint eslint-loader eslint-plugin-react --save-dev
+npm install eslint @babel/eslint-parser eslint-webpack-plugin eslint-plugin-react --save-dev
 npm install css-loader style-loader babel-loader --save-dev
 ```
 
@@ -100,23 +100,24 @@ mkdir public
 
 ```json
 {
-  "parser": "babel-eslint",
   "env": {
-    "browser": true,
-    "es6": true
+      "browser": true,
+      "es2021": true
   },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "jsx": true
-    }
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["react"],
-  "rules": {
-    "no-console": "off"
-  },
+  "plugins": [
+      "react"
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -127,6 +128,7 @@ mkdir public
 * webpack.config.js
 
 ```js
+const ESLintPlugin = require('eslint-webpack-plugin')
 module.exports = {
   entry: {
     app: "./src/index.js"
@@ -144,18 +146,16 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      enforce: "pre",
       exclude: /node_modules/,
-      loader: "eslint-loader"
+      use: ['babel-loader']
     }, {
       test: /\.css$/,
       use: ["style-loader","css-loader"]
-    }, {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: "babel-loader"
-     }]
-  }
+    }]
+  },
+  plugins: [
+    new ESLintPlugin()
+  ]
 };
 ```
 

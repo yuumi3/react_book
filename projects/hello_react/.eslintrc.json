@@ -1,24 +1,25 @@
 {
-    "parser": "babel-eslint",
-    "env": {
+  "env": {
       "browser": true,
-      "es6": true
-    },
-    "parserOptions": {
-      "sourceType": "module",
+      "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
       "ecmaFeatures": {
-        "experimentalObjectRestSpread": true,
-        "jsx": true
-      }
-    },
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
-    "plugins": ["react"],
-    "rules": {
-      "no-console": "off"
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
+          "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+  },
+  "plugins": [
+      "react"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
     }
   }
+}
