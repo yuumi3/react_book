@@ -18,6 +18,7 @@
 * [テスティング](sources/test.md)
 
 ## お知らせ
+* security alertが発生するので`projects/hello_react` を削除しました
 * Babel 8に対応しました
 * webpack-dev-server 4に対応しました(potential security vulnerabilities対応)
 * Webpack5の変更(Error: Cannot find module 'webpack-cli/bin/config-yargs')に対応しました
